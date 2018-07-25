@@ -22,7 +22,7 @@ class Utils {
             ------------------------------------
             ------------------------------------
 
-            Time to evaluate dequeue \(timeInterval) seconds
+            Time to evaluate \(algorithm) \(timeInterval) seconds
 
             ------------------------------------
             ------------------------------------
@@ -32,4 +32,6 @@ class Utils {
             """
         )
     }
+    
+   
 }
