@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ * FIFO (First In, First Out)
+ */
 public struct Queue<Type> {
     private var values: [Type?] = []
     private var head: Int = 0
@@ -19,6 +22,9 @@ public struct Queue<Type> {
         values.append(value)
     }
 
+    /**
+     * This is slowly because when the firs item is removed the array is shifted
+     */
     public mutating func dequeueSlowly() -> Type? {
         return values.isEmpty ? nil : values.removeFirst()
     }

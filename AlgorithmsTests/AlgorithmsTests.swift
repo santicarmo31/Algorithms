@@ -9,7 +9,7 @@
 import XCTest
 @testable import Algorithms
 
-class AlgorithmsTests: XCTestCase {
+class AlgorithmsTests: BaseTest {
     
     var insertionList: [Int] = []
     
@@ -20,37 +20,32 @@ class AlgorithmsTests: XCTestCase {
         }
         
         insertionList = list
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {        
         super.tearDown()
-    }
-    
-    func load(jsonNamed name: String) -> Any? {
-        if let path = Bundle(for: AlgorithmsTests.self).path(forResource: name, ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                return try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-            } catch {
-                print("Unable to find json file named: \(name)")
-            }
-        }
-        
-        return nil
-    }
+    }        
     
     func testInsertionSort() {
         let sortedNumbers = insertionList.sorted()
         Utils.test(algorithm: "Insertion sort", closure: {
-            XCTAssertEqual(sortedNumbers, Sort.insertionSort([4,3,2,1]))
+            XCTAssertEqual(sortedNumbers, Sort.insertionSort(insertionList, <))
         })
     }
     
     func testInsertionSortWithoutSwap() {
+        let sortedNumbers = insertionList.sorted(by: >)
         Utils.test(algorithm: "Insertion sort without swap", closure: {
-            Sort.insertionSortWithoutSwap(insertionList)
+            XCTAssertEqual(sortedNumbers, Sort.insertionSortWithoutSwap(insertionList, >))
         })
+    }
+    
+    func testExample() {
+        let node = Node(value: 7)
+        node.insert(value: 2)
+        node.insert(value: 1)
+        node.insert(value: 5)
+        node.insert(value: 10)
+        node.traverse()
     }
 }
