@@ -26,6 +26,7 @@
 		96595955205D892D009EF77D /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96595954205D892D009EF77D /* Stack.swift */; };
 		96BD54002108041D003AE5DA /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BD53FF2108041D003AE5DA /* Sort.swift */; };
 		96BD540221082682003AE5DA /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = 96BD540121082682003AE5DA /* list.json */; };
+		96FB0554211B5C8A00DDCF08 /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB0553211B5C8A00DDCF08 /* MergeSort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		96595954205D892D009EF77D /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		96BD53FF2108041D003AE5DA /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		96BD540121082682003AE5DA /* list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
+		96FB0553211B5C8A00DDCF08 /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			children = (
 				96BD53FF2108041D003AE5DA /* Sort.swift */,
 				96217F54210F3F4A001AEC06 /* InsertionSort.swift */,
+				96FB0553211B5C8A00DDCF08 /* MergeSort.swift */,
 			);
 			path = Sorts;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				96595955205D892D009EF77D /* Stack.swift in Sources */,
 				96217F9021136B25001AEC06 /* BinarySearchTree.swift in Sources */,
 				96595934205D88C2009EF77D /* ViewController.swift in Sources */,
+				96FB0554211B5C8A00DDCF08 /* MergeSort.swift in Sources */,
 				96217F9221136B44001AEC06 /* BinaryTree.swift in Sources */,
 				96217F55210F3F4A001AEC06 /* InsertionSort.swift in Sources */,
 				96BD54002108041D003AE5DA /* Sort.swift in Sources */,

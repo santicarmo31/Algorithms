@@ -34,9 +34,9 @@ class BinaryTree {
     }
     
     func traverse() {
-        print(leftChild?.traverse())
+        leftChild?.traverse()
         print(value)
-        print(rightChild?.traverse())
+        rightChild?.traverse()
     }
     
 }
