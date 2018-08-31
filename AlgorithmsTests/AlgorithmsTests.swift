@@ -25,6 +25,10 @@ class AlgorithmsTests: BaseTest {
     override func tearDown() {        
         super.tearDown()
     }
+    
+    func testExample() {
+        
+    }
 }
 
 // MARK: - Sorts
