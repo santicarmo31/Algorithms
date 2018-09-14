@@ -23,4 +23,9 @@ class SearchTests: XCTestCase {
        let array = [-1,0,1,2,3,5]
         print(Search.binarySearch(element: 0, in: array, range: 0..<array.count))
     }
+    
+    func testBoyerMoore() {
+        let text = "santiago"
+        print(text.index(of: "ago"))
+    }
 }
