@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EE1DD19214F42F600448953 /* CountOcurrencesOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE1DD18214F42F600448953 /* CountOcurrencesOf.swift */; };
 		96037811205D8C3300232CC7 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96037810205D8C3300232CC7 /* QueueTests.swift */; };
 		96037814205D9EC900232CC7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96037813205D9EC900232CC7 /* Utils.swift */; };
 		96217F55210F3F4A001AEC06 /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96217F54210F3F4A001AEC06 /* InsertionSort.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6EE1DD18214F42F600448953 /* CountOcurrencesOf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountOcurrencesOf.swift; sourceTree = "<group>"; };
 		96037810205D8C3300232CC7 /* QueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 		96037813205D9EC900232CC7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		96217F54210F3F4A001AEC06 /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				96217F8F21136B25001AEC06 /* BinarySearchTree.swift */,
 				96D8E5AF214C03A000EEF423 /* BoyerMooreStringSearch.swift */,
 				9657DD04214C63E500C80041 /* MinimunOrMaximum.swift */,
+				6EE1DD18214F42F600448953 /* CountOcurrencesOf.swift */,
 			);
 			path = Searchs;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EE1DD19214F42F600448953 /* CountOcurrencesOf.swift in Sources */,
 				96217F8A2110C20E001AEC06 /* Search.swift in Sources */,
 				96217F882110C1FC001AEC06 /* BinarySearch.swift in Sources */,
 				96037814205D9EC900232CC7 /* Utils.swift in Sources */,
