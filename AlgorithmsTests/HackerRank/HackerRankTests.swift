@@ -64,4 +64,27 @@ class HackerRankTests: XCTestCase {
         }
         print(testKangaroo(x1: 0, v1: 2, x2: 5, v2: 3))
     }
+    
+    func testBetweenTwoSets() {
+        func betweenTwoSets(a: [Int], b: [Int]) -> Int {
+            var divideEvenlyNumbers: [Int] = []
+            
+            let aCount = a.count
+            let bCount = b.count
+            
+            for i in 1...100 {
+                let divideEvenlyNumbersACount = a.filter({ i % $0 == 0 }).count
+                if divideEvenlyNumbersACount == aCount {
+                    let divideEvenlyNumbersBCount = b.filter({ $0 % i == 0}).count
+                    if divideEvenlyNumbersBCount == bCount {
+                        divideEvenlyNumbers.append(i)
+                    }
+                }
+            }
+            
+            return divideEvenlyNumbers.count
+        }
+        
+        print(betweenTwoSets(a: [2,6], b: [24, 36]))
+    }
 }
