@@ -18,7 +18,7 @@ class HackerRankTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testcountApplesAndOranges() {
         func countApplesAndOranges(s: Int, t: Int, a: Int, b: Int, apples: [Int], oranges: [Int]) -> Void {
             let applesThrownAtDistance = apples.map({ a + $0 })
             let orangesThrownAtDistance = oranges.map({ b + $0})
