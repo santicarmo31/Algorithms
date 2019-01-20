@@ -58,6 +58,13 @@ extension AlgorithmsTests {
             XCTAssertEqual(sortedNumbers, Sort.mergeSort(array: insertionList))
         })
     }
+    func testMergeSort2() {
+        measure {
+        let sortedNumbers = insertionList.sorted()
+//        Utils.test(algorithm: "Merge sort with list of \(insertionList.count) elements", closure: {
+            XCTAssertEqual(sortedNumbers, Sort.mergeSort(array: insertionList))
+        }
+    }
 }
 
 // MARK: - BinarySearchTree
@@ -85,5 +92,50 @@ extension AlgorithmsTests {
             invalidTree.insert(value: 5)
             XCTAssertFalse(binarySearchTree.isBinarySearchTreeValid(minValue: Int.min, maxValue: Int.max))
         }
+    }
+}
+
+
+// MARK: - LinkedList
+
+extension AlgorithmsTests {
+    func testLinkedListPush() {
+        let linkedList = LinkedList<Int>()
+        linkedList.push(value: 1)
+        linkedList.push(value: 2)
+        linkedList.push(value: 3)
+        print(linkedList.description)
+    }
+    
+    func testLinkedListAppend() {
+        let linkedList = LinkedList<Int>()
+        linkedList.append(value: 1)
+        linkedList.append(value: 2)
+        linkedList.append(value: 3)
+        print(linkedList.description)
+    }
+    
+    func testLinkedListNodeAt() {
+        let linkedList = LinkedList<Int>()
+        linkedList.append(value: 1)
+        linkedList.append(value: 2)
+        linkedList.append(value: 3)
+        print(linkedList.node(at: 1)!.value)
+        print(linkedList.description)
+    }
+    
+    func testLinkedListInsertAfter() {
+        let linkedList = LinkedList<Int>()
+        linkedList.append(value: 1)
+        linkedList.append(value: 2)
+        linkedList.append(value: 3)
+        print("Linked list before insert: " + linkedList.description)
+        
+        let after = linkedList.node(at: 1)!
+        for _ in 0...2 {
+            linkedList.insert(after: after, value: 5)
+        }
+        
+        print("Linked list after insert: " + linkedList.description)
     }
 }

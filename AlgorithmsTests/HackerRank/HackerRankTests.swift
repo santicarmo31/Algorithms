@@ -64,4 +64,37 @@ class HackerRankTests: XCTestCase {
         }
         print(testKangaroo(x1: 0, v1: 2, x2: 5, v2: 3))
     }
+    
+    func testBreakingRecords() {
+        func breakingRecords(scores: [Int]) -> [Int] {
+            var records: (best: Int, worst: Int) = (0, 0)
+            
+            guard let firstScore = scores.first else {
+                return [0, 0]
+            }
+            
+            var best = firstScore
+            var worst = firstScore
+            
+            for game in 1..<scores.count {
+                let score = scores[game]
+                if score > best {
+                    best = score
+                    records.best += 1
+                } else if score < worst {
+                    worst = score
+                    records.worst += 1
+                }
+            }
+            
+            return [records.best, records.worst]
+        }
+        print(breakingRecords(scores: [10,5,20,20,4,5,2,25,1]))
+    }
+    
+    func testBirthdays() {
+        func birthday(s: [Int], d: Int, m: Int) -> Int {
+            return 1
+        }
+    }
 }

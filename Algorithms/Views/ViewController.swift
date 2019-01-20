@@ -19,7 +19,17 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let emptyVC = EmptyViewC(nibName: "Empty", bundle: nil)
+        present(emptyVC, animated: true, completion: nil)
+    }
 
 }
 
