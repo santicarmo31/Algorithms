@@ -94,7 +94,38 @@ extension AlgorithmsTests {
         }
     }
 }
+        
+// MARK: - BoyerMoore String
 
+extension AlgorithmsTests {
+    func testBoyerMooreString() {
+        let testString = "Hello, World"
+        let pattern = "World"
+        XCTAssertEqual(testString.firstIndex(of: "W"), testString.index(of: pattern))
+    }
+}
+
+// MARK: - Minimum or Maximum
+
+extension AlgorithmsTests {
+    func testMinimum() {
+        let minimum = 0
+        XCTAssertEqual(minimum, Search.minimum(insertionList))
+    }
+    
+    func testMaximum() {
+        let maximum = 9999999
+        XCTAssertEqual(maximum, Search.maximum(insertionList))
+    }
+}
+
+extension AlgorithmsTests {
+    func testCountOcurrencesOf() {
+        let countedOccurences = 1
+        let key = 0
+        XCTAssertEqual(countedOccurences, Search.countOcurrences(of: key, in: insertionList))
+    }
+}
 
 // MARK: - LinkedList
 

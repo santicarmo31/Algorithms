@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EE1DD19214F42F600448953 /* CountOcurrencesOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE1DD18214F42F600448953 /* CountOcurrencesOf.swift */; };
 		96037811205D8C3300232CC7 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96037810205D8C3300232CC7 /* QueueTests.swift */; };
 		96037814205D9EC900232CC7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96037813205D9EC900232CC7 /* Utils.swift */; };
 		9611D8B121F4D4D7006D5562 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9611D8B021F4D4D7006D5562 /* Node.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6EE1DD18214F42F600448953 /* CountOcurrencesOf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountOcurrencesOf.swift; sourceTree = "<group>"; };
 		96037810205D8C3300232CC7 /* QueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 		96037813205D9EC900232CC7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9611D8B021F4D4D7006D5562 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				96217F8F21136B25001AEC06 /* BinarySearchTree.swift */,
 				96D8E5AF214C03A000EEF423 /* BoyerMooreStringSearch.swift */,
 				9657DD04214C63E500C80041 /* MinimunOrMaximum.swift */,
+				6EE1DD18214F42F600448953 /* CountOcurrencesOf.swift */,
 			);
 			path = Searchs;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9611D8B321F4D56F006D5562 /* LinkedList.swift in Sources */,
+				6EE1DD19214F42F600448953 /* CountOcurrencesOf.swift in Sources */,
 				96217F8A2110C20E001AEC06 /* Search.swift in Sources */,
 				96F9E2792153354E00EF6EF7 /* EmptyViewC.swift in Sources */,
 				96217F882110C1FC001AEC06 /* BinarySearch.swift in Sources */,
