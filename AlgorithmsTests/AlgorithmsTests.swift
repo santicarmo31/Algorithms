@@ -169,4 +169,41 @@ extension AlgorithmsTests {
         
         print("Linked list after insert: " + linkedList.description)
     }
+    
+    func testLinkedListPop() {
+        let linkedList = LinkedList<Int>()
+        linkedList.push(value: 1)
+        linkedList.push(value: 2)
+        linkedList.push(value: 3)
+        print(linkedList.pop())
+        print(linkedList.description)
+    }
+    
+    func testLinkedListRemoveLast() {
+        let list = LinkedList<Int>()
+        list.push(value: 3)
+        list.push(value: 2)
+        list.push(value: 1)
+        
+        print("Before removing last node: \(list)")
+        let removedValue = list.removeLast()
+        
+        print("After removing last node: \(list)")
+        print("Removed value: " + String(describing: removedValue))
+    }
+    
+    func testLinkedListRemoveAfter() {
+        let list = LinkedList<Int>()
+        list.push(value: 3)
+        list.push(value: 2)
+        list.push(value: 1)
+        
+        print("Before removing at particular index: \(list)")
+        let index = 1
+        let node = list.node(at: index - 1)!
+        let removedValue = list.remove(after: node)
+        
+        print("After removing at index \(index): \(list)")
+        print("Removed value: " + String(describing: removedValue))
+    }
 }
