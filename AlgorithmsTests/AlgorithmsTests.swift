@@ -131,7 +131,7 @@ extension AlgorithmsTests {
 
 extension AlgorithmsTests {
     func testLinkedListPush() {
-        let linkedList = LinkedList<Int>()
+        var linkedList = LinkedList<Int>()
         linkedList.push(value: 1)
         linkedList.push(value: 2)
         linkedList.push(value: 3)
@@ -139,7 +139,7 @@ extension AlgorithmsTests {
     }
     
     func testLinkedListAppend() {
-        let linkedList = LinkedList<Int>()
+        var linkedList = LinkedList<Int>()
         linkedList.append(value: 1)
         linkedList.append(value: 2)
         linkedList.append(value: 3)
@@ -147,7 +147,7 @@ extension AlgorithmsTests {
     }
     
     func testLinkedListNodeAt() {
-        let linkedList = LinkedList<Int>()
+        var linkedList = LinkedList<Int>()
         linkedList.append(value: 1)
         linkedList.append(value: 2)
         linkedList.append(value: 3)
@@ -156,7 +156,7 @@ extension AlgorithmsTests {
     }
     
     func testLinkedListInsertAfter() {
-        let linkedList = LinkedList<Int>()
+        var linkedList = LinkedList<Int>()
         linkedList.append(value: 1)
         linkedList.append(value: 2)
         linkedList.append(value: 3)
@@ -171,7 +171,7 @@ extension AlgorithmsTests {
     }
     
     func testLinkedListPop() {
-        let linkedList = LinkedList<Int>()
+        var linkedList = LinkedList<Int>()
         linkedList.push(value: 1)
         linkedList.push(value: 2)
         linkedList.push(value: 3)
@@ -180,7 +180,7 @@ extension AlgorithmsTests {
     }
     
     func testLinkedListRemoveLast() {
-        let list = LinkedList<Int>()
+        var list = LinkedList<Int>()
         list.push(value: 3)
         list.push(value: 2)
         list.push(value: 1)
@@ -193,7 +193,7 @@ extension AlgorithmsTests {
     }
     
     func testLinkedListRemoveAfter() {
-        let list = LinkedList<Int>()
+        var list = LinkedList<Int>()
         list.push(value: 3)
         list.push(value: 2)
         list.push(value: 1)
@@ -205,5 +205,67 @@ extension AlgorithmsTests {
         
         print("After removing at index \(index): \(list)")
         print("Removed value: " + String(describing: removedValue))
+    }
+    
+    func testLinkedListUsingCollection() {
+        var list = LinkedList<Int>()
+        for i in 0...9 {
+            list.append(value: i)
+        }
+        
+        print("List: \(list)")
+        print("First element: \(list[list.startIndex])")
+        print("Array containing first 3 elements: \(Array(list.prefix(3)))")
+        print("Array containing last 3 elements: \(Array(list.suffix(3)))")
+        
+        let sum = list.reduce(0, +)
+        print("Sum of all values: \(sum)")                
+    }
+    
+    // MARK: - Challenges
+    
+    func testPrintInReverseOrder() {
+        var list = LinkedList<Int>()
+        for i in 0...9 {
+            list.append(value: i)
+        }
+        
+        LinkedListChallenges.traversePostOrder(list)
+    }
+    
+    func testPrintMiddleNode() {
+        var list = LinkedList<Int>()
+        for i in 1...4 {
+            list.append(value: i)
+        }
+        
+        print(LinkedListChallenges.returnMiddleNodeOf(list))
+    }
+    
+    func testReverseLinkedList() {
+        var list = LinkedList<Int>()
+        for i in 1...9 {
+            list.append(value: i)
+        }
+        
+        list.reverse()
+        print(list)
+    }
+    
+    func testMergeLinkedList() {
+        var list1 = LinkedList<Int>()
+        var list2 = LinkedList<Int>()
+        
+        list1.push(value: 11)
+        list1.push(value: 10)
+        list1.push(value: 4)
+        list1.push(value: 1)
+        
+        list2.push(value: 6)
+        list2.push(value: 3)
+        list2.push(value: 2)
+        list2.push(value: 1)
+        
+        print(LinkedListChallenges.merge(sortedList: list1, withSorted: list2))
     }
 }

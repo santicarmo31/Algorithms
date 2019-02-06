@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LinkedList<Value> {
+struct LinkedList<Value> {
     var head: Node<Value>?
     var tail: Node<Value>?
     
@@ -23,7 +23,8 @@ class LinkedList<Value> {
     
     /// Also known as **head-first insertion**.
     /// Time complexity: **O(1)**
-    func push(value: Value) {
+    mutating func push(value: Value) {
+        copyNodes()
         head = Node(value: value, next: head)
         if tail == nil {
             tail = head
@@ -32,7 +33,8 @@ class LinkedList<Value> {
     
     /// Also known as **tail-end insertion**
     /// Time complexity: **O(1)**
-    func append(value: Value) {
+    mutating func append(value: Value) {
+        copyNodes()
         guard !isEmpty else {
             push(value: value)
             return
@@ -44,7 +46,8 @@ class LinkedList<Value> {
     }
     
     /// Time complexity: **O(1)**
-    func insert(after node: Node<Value>, value: Value) {
+    mutating func insert(after node: Node<Value>, value: Value) {
+        copyNodes()
         guard tail !== node else {
             append(value: value)
             return
@@ -71,7 +74,8 @@ class LinkedList<Value> {
     // MARK: - Remove operations
     
     /// Time complexity: **O(1)**
-    func pop() -> Value? {
+    mutating func pop() -> Value? {
+        copyNodes()
         defer {
             head = head?.next
             if isEmpty {
@@ -83,7 +87,8 @@ class LinkedList<Value> {
     }
     
     /// Time complexity: **O(n)** because should traverse all elements
-    func removeLast() -> Value? {
+    mutating func removeLast() -> Value? {
+        copyNodes()
         var currentNode = head
         
         guard currentNode !== tail else {
@@ -102,7 +107,8 @@ class LinkedList<Value> {
     }
     
     /// Time complexity: **O(1)**
-    func remove(after node: Node<Value>) -> Value? {
+    mutating func remove(after node: Node<Value>) -> Value? {
+        copyNodes()
         defer {
             if node.next === tail {
                 tail = node
@@ -111,6 +117,28 @@ class LinkedList<Value> {
         }
         
         return node.next?.value
+    }        
+    
+    private mutating func copyNodes() {
+        guard !isKnownUniquelyReferenced(&head) else {
+            return
+        }
+        
+        guard var oldNode = head else {
+            return
+        }
+        
+        head = Node(value: oldNode.value)
+        var newNode = head
+        
+        while let nextOldNode = oldNode.next {
+            newNode!.next = Node(value: nextOldNode.value)
+            newNode = newNode!.next
+            
+            oldNode = nextOldNode
+        }
+        
+        tail = newNode
     }
 }
 
@@ -121,5 +149,49 @@ extension LinkedList: CustomStringConvertible {
             return "Empty list"
         }
         return String(describing: head)
+    }
+}
+
+extension LinkedList: Collection {
+    
+    public struct Index: Comparable {
+        
+        public var node: Node<Value>?
+        
+        static public func ==(lhs: Index, rhs: Index) -> Bool {
+            switch (lhs.node, rhs.node) {
+            case let (left?, right?):
+                return left.next === right.next
+            case (nil, nil):
+                return true
+            default:
+                return false
+            }
+        }
+        
+        static public func <(lhs: Index, rhs: Index) -> Bool {
+            guard lhs != rhs else {
+                return false
+            }
+            let nodes = sequence(first: lhs.node) { $0?.next }
+            return nodes.contains { $0 === rhs.node }
+        }
+    }
+    
+    // 1
+    public var startIndex: Index {
+        return Index(node: head)
+    }
+    // 2
+    public var endIndex: Index {
+        return Index(node: tail?.next)
+    }
+    // 3
+    public func index(after i: Index) -> Index {
+        return Index(node: i.node?.next)
+    }
+    // 4
+    public subscript(position: Index) -> Value {
+        return position.node!.value
     }
 }
